@@ -1,0 +1,2 @@
+# stay
+scripts for safari
