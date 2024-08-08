@@ -34,19 +34,20 @@ function hideSelection(name,selectors){
 }
 
 const GeeksForGeeks=setInterval(()=>{
-   hideSelection(`.cookie-text,
+   hideSelection('www.geeksforgeeks.org',`.cookie-text,
     [class*="avp"],
     [class*="commercial"],
     video,
     [id*="google_ads"],
-    .widget-area`,'www.geeksforgeeks.org');
+    .widget-area`);
 },100);
 
 const Medium=setInterval(()=>{
+  if(location.host!='medium.com'){return;}
   document?.querySelector?.('[data-testid="close-button"]')?.click?.();
 },100);
 
 const w3schools=setInterval(()=>{
-     hideSelection(`[id*="adngin"],
-     .sidesection`,'www.w3schools.com');
+     hideSelection('www.w3schools.com',`[id*="adngin"],
+     .sidesection`);
 },100);
