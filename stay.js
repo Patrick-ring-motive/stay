@@ -16,10 +16,11 @@ const CodeWars = setInterval(()=>{
 
 const googleAds = setInterval(()=>{
     if(!document.querySelector(`[googleads4style]`)){
+    let selectors = `[id*="google_ads"],
+    [class*="google_ads"]`;
     let s = document.createElement('style');
     s.innerText = `
-    [id*="google_ads"],
-    [class*="google_ads"]
+    ${selectors}
     {
       display:none;
       visibility:hidden;
