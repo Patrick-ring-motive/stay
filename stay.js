@@ -15,9 +15,9 @@ const CodeWars = setInterval(()=>{
 },1000);
 
 const googleAds = setInterval(()=>{
-    if(!document.querySelector(`[googleads4style]`)){
     let selectors = `[id*="google_ads"],
     [class*="google_ads"]`;
+    if(!document.querySelector(`[googleads4style]`)){
     let s = document.createElement('style');
     s.innerText = `
     ${selectors}
