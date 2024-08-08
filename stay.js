@@ -27,7 +27,7 @@ function hideSelection(name,selectors){
       opacity:0;
     }
     `;
-    s.setAttribute(sname,true);
+    s.setAttribute(`${sname}4style`,true);
     document.body.appendChild(s);
   }
   [...document.querySelectorAll(selectors)].forEach(x=>x?.remove?.());
@@ -47,5 +47,6 @@ const Medium=setInterval(()=>{
 },100);
 
 const w3schools=setInterval(()=>{
-     hideSelection(`[id*="adngin"]`,'www.w3schools.com');
+     hideSelection(`[id*="adngin"],
+     .sidesection`,'www.w3schools.com');
 },100);
