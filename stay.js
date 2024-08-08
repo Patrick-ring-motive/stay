@@ -36,7 +36,7 @@ const googleAds = setInterval(()=>{
 
 
 function hideSelection(name,selectors){
-  if(location.host!=name){return;}
+  if(!~location.host.search(name)){return;}
   const sname = name.replaceAll('.','');
   if(!document.querySelector(`[${sname}4style]`)){
     let s = document.createElement('style');
