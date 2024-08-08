@@ -38,3 +38,24 @@ const GeeksForGeeks=setInterval(()=>{
   }
   [...document.querySelectorAll(selectors)].forEach(x=>x?.remove?.());
 },100);
+
+const Medium=setInterval(()=>{
+   let selectors = `asdfasdf`;
+  if(location.host!='medium.com'){return;}
+  if(!document.querySelector('[medium4style]')){
+    let s = document.createElement('style');
+    s.innerText = `
+    ${selectors}
+    {
+      display:none;
+      visibility:hidden;
+      opacity:0;
+    }
+    `;
+    s.setAttribute('medium4style',true);
+    document.body.appendChild(s);
+  }
+  [...document.querySelectorAll(selectors)].forEach(x=>x?.remove?.());
+  document?.querySelector?.('[data-testid="close-button"]')?.click?.();
+},100);
+
