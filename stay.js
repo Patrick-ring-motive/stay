@@ -1,6 +1,6 @@
 
 setInterval(()=>{
-  if(`${document?.title}`.includes('👾'){return;}
+  if(`${document?.title}`.includes('👾')){return;}
   (document??{}).title = `${document?.title} 👾`;
 },100);
 
