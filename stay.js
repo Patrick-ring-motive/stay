@@ -14,67 +14,38 @@ const CodeWars = setInterval(()=>{
                 document.querySelectorAll('.vote-assessment>li[data-value="1"]:not(.is-active) a.btn').forEach(x=>x.click());
 },1000);
 
+function hideSelection(name,selectors){
+  if(location.host!=name){return;}
+  const sname = name.replaceAll('.','');
+  if(!document.querySelector(`[${sname}4style]`)){
+    let s = document.createElement('style');
+    s.innerText = `
+    ${selectors}
+    {
+      display:none;
+      visibility:hidden;
+      opacity:0;
+    }
+    `;
+    s.setAttribute(sname,true);
+    document.body.appendChild(s);
+  }
+  [...document.querySelectorAll(selectors)].forEach(x=>x?.remove?.());
+}
 
 const GeeksForGeeks=setInterval(()=>{
-   let selectors = `.cookie-text,
+   hideSelection(`.cookie-text,
     [class*="avp"],
     [class*="commercial"],
     video,
     [id*="google_ads"],
-    .widget-area`;
-  if(location.host!='www.geeksforgeeks.org'){return;}
-  if(!document.querySelector('[geeks4style]')){
-    let s = document.createElement('style');
-    s.innerText = `
-    ${selectors}
-    {
-      display:none;
-      visibility:hidden;
-      opacity:0;
-    }
-    `;
-    s.setAttribute('geeks4style',true);
-    document.body.appendChild(s);
-  }
-  [...document.querySelectorAll(selectors)].forEach(x=>x?.remove?.());
+    .widget-area`,'www.geeksforgeeks.org');
 },100);
 
 const Medium=setInterval(()=>{
-   let selectors = `asdfasdf`;
-  if(location.host!='medium.com'){return;}
-  if(!document.querySelector('[medium4style]')){
-    let s = document.createElement('style');
-    s.innerText = `
-    ${selectors}
-    {
-      display:none;
-      visibility:hidden;
-      opacity:0;
-    }
-    `;
-    s.setAttribute('medium4style',true);
-    document.body.appendChild(s);
-  }
-  [...document.querySelectorAll(selectors)].forEach(x=>x?.remove?.());
   document?.querySelector?.('[data-testid="close-button"]')?.click?.();
 },100);
 
 const w3schools=setInterval(()=>{
-   let selectors = `[id*="adngin"]
-   `;
-  if(location.host!='www.w3schools.com'){return;}
-  if(!document.querySelector('[w3schools4style]')){
-    let s = document.createElement('style');
-    s.innerText = `
-    ${selectors}
-    {
-      display:none;
-      visibility:hidden;
-      opacity:0;
-    }
-    `;
-    s.setAttribute('w3schools4style',true);
-    document.body.appendChild(s);
-  }
-  [...document.querySelectorAll(selectors)].forEach(x=>x?.remove?.());
+     hideSelection(`[id*="adngin"]`,'www.w3schools.com');
 },100);
