@@ -18,14 +18,15 @@ const CodeWars = setInterval(()=>{
 const GeeksForGeeks=setInterval(()=>{
   if(location.host!='www.geeksforgeeks.org'){return;}
   if(!document.querySelector('[geeks4style]')){
-    let s = document.createElement('style');
-    s.innerText = `
-    .cookie-text,
+    let selectors = `.cookie-text,
     [class*="avp"],
     [class*="commercial"],
     video,
     [id*="google_ads"],
-    .widget-area
+    .widget-area`;
+    let s = document.createElement('style');
+    s.innerText = `
+    ${selectors}
     {
       display:none;
       visibility:hidden;
@@ -35,4 +36,5 @@ const GeeksForGeeks=setInterval(()=>{
     s.setAttribute('geeks4style',true);
     document.body.appendChild(s);
   }
+  [...document.querySelectorAll(selectors)].forEach(x=>x?.remove?.());
 },100);
