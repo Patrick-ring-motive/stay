@@ -16,14 +16,14 @@ const CodeWars = setInterval(()=>{
 
 
 const GeeksForGeeks=setInterval(()=>{
-  if(location.host!='www.geeksforgeeks.org'){return;}
-  if(!document.querySelector('[geeks4style]')){
-    let selectors = `.cookie-text,
+   let selectors = `.cookie-text,
     [class*="avp"],
     [class*="commercial"],
     video,
     [id*="google_ads"],
     .widget-area`;
+  if(location.host!='www.geeksforgeeks.org'){return;}
+  if(!document.querySelector('[geeks4style]')){
     let s = document.createElement('style');
     s.innerText = `
     ${selectors}
