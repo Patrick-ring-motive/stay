@@ -14,6 +14,26 @@ const CodeWars = setInterval(()=>{
                 document.querySelectorAll('.vote-assessment>li[data-value="1"]:not(.is-active) a.btn').forEach(x=>x.click());
 },1000);
 
+const googleAds = setInterval(()=>{
+    if(!document.querySelector(`[googleads4style]`)){
+    let s = document.createElement('style');
+    s.innerText = `
+    [id*="google_ads"],
+    [class*="google_ads"]
+    {
+      display:none;
+      visibility:hidden;
+      opacity:0;
+    }
+    `;
+    s.setAttribute(`googleads4style`,true);
+    document.body.appendChild(s);
+  }
+  [...document.querySelectorAll(selectors)].forEach(x=>x?.remove?.());
+  
+},100);
+
+
 function hideSelection(name,selectors){
   if(location.host!=name){return;}
   const sname = name.replaceAll('.','');
