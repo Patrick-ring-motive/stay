@@ -1,7 +1,7 @@
 
 setInterval(()=>{
   if(`${document?.title}`.includes('👾')){return;}
-  (document??{}).title = `${document?.title} 👾`;
+  (document??{}).title = `👾 ${document?.title}`;
 },100);
 
 
