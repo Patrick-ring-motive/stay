@@ -59,3 +59,22 @@ const Medium=setInterval(()=>{
   document?.querySelector?.('[data-testid="close-button"]')?.click?.();
 },100);
 
+const w3schools=setInterval(()=>{
+   let selectors = `[id*="adngin"]
+   `;
+  if(location.host!='www.w3schools.com'){return;}
+  if(!document.querySelector('[w3schools4style]')){
+    let s = document.createElement('style');
+    s.innerText = `
+    ${selectors}
+    {
+      display:none;
+      visibility:hidden;
+      opacity:0;
+    }
+    `;
+    s.setAttribute('w3schools4style',true);
+    document.body.appendChild(s);
+  }
+  [...document.querySelectorAll(selectors)].forEach(x=>x?.remove?.());
+},100);
