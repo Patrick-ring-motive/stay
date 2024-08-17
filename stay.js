@@ -9,7 +9,7 @@ const wiki=setInterval(()=>{
   [...document.querySelectorAll('video')].forEach(x=>x.remove());
 },100);
 
-
+ 
 const CodeWars = setInterval(()=>{
  if(location.host!='www.codewars.com'){return;}
          document.body.style.filter='hue-rotate(50deg)';
