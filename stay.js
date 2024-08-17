@@ -5,7 +5,7 @@ setInterval(()=>{
 },100);
 
 const wiki=setInterval(()=>{
-  if(!~location.host.search(/wiki|pedia/i)){return;}
+  if(!~location.host.search(/wiki|pedia/i) && window == window.top){return;}
   [...document.querySelectorAll('video')].forEach(x=>x.remove());
 },100);
 
