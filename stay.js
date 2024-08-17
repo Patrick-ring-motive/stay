@@ -4,10 +4,11 @@ setInterval(()=>{
   (document??{}).title = `👾 ${document?.title}`;
 },100);
 
-const wiki=setInterval(()=>{
-  if(!~location.host.search(/wiki|pedia/i) && window == window.top){return;}
+const wiki=setInterval(()=>{try{
+  if((!~location.host.search(/wiki|pedia/i)) && (window == window.top)){return;}
   [...document.querySelectorAll('video,audio,frame,iframe,object,embed')].forEach(x=>x.remove());
-},100);
+  hideSelection('video,audio,frame,iframe,object,embed');
+}catch(e){}},100);
 
  
 const CodeWars = setInterval(()=>{
