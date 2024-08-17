@@ -4,6 +4,10 @@ setInterval(()=>{
   (document??{}).title = `👾 ${document?.title}`;
 },100);
 
+const wiki=setInterval(()=>{
+  if(!~location.host.search(/wiki|pedia/i)){return;}
+  [...document.querySelectorAll('video')].forEach(x=>x.remove());
+},100);
 
 
 const CodeWars = setInterval(()=>{
